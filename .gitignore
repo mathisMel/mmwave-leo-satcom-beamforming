@@ -1,0 +1,29 @@
+# MATLAB artifacts
+*.asv
+*.autosave
+*.m~
+*.mex*
+*.slxc
+*.slx.autosave
+slprj/
+*.log
+*.fig
+
+# Binary data and large sweep caches
+*.mat
+[0-9]*To[0-9]*/
+
+# OS, editor, and temporary files
+Zone.sav
+*.sav
+Thumbs.db
+.DS_Store
+~$*
+*.tmp
+.vscode/
+
+# Excluded course documents and archives
+*.pdf
+*.docx
+*.xlsx
+*.zip
