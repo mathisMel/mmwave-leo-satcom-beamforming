@@ -238,3 +238,19 @@ fprintf('  [4, 8, 16] Iso pass data  : %s Gbit | Peak C: %s Mbit/s\n', ...
     sprintf('%.3f ', transmitted_data_iso/1e9), sprintf('%.2f ', max1/1e6));
 fprintf('  [4, 8, 16] Patch pass data: %s Gbit | Peak C: %s Mbit/s\n', ...
     sprintf('%.3f ', transmitted_data_patch/1e9), sprintf('%.2f ', max2/1e6));
+
+%% Export Figures (450 DPI PNG + Vector PDF)
+figRoot = fullfile(fileparts(fileparts(mfilename('fullpath'))), 'docs', 'figures');
+pngDir = fullfile(figRoot, 'png');
+pdfDir = fullfile(figRoot, 'pdf');
+if ~exist(pngDir, 'dir'), mkdir(pngDir); end
+if ~exist(pdfDir, 'dir'), mkdir(pdfDir); end
+figs = findall(0, 'Type', 'figure');
+if ~isempty(figs)
+    [~, ord] = sort([figs.Number]);
+    figs = figs(ord);
+    for fi = 1:numel(figs)
+        exportgraphics(figs(fi), fullfile(pngDir, sprintf('step3_fig%02d.png', fi)), 'Resolution', 450, 'BackgroundColor', 'white');
+        exportgraphics(figs(fi), fullfile(pdfDir, sprintf('step3_fig%02d.pdf', fi)), 'ContentType', 'vector', 'BackgroundColor', 'white');
+    end
+end

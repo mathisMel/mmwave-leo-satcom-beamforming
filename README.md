@@ -28,17 +28,17 @@ Verified outputs recorded from standalone execution on MATLAB R2026b (`BW = 40 M
 | **Step 3: Urban Canyon (`pas = 0.2°`)** | Single antenna vs. `N = 4 / 8 / 16` Iso | `0.8519 Gbit` vs. `2.743 / 4.629 / 7.352 Gbit` (peak `25.70 / 43.42 / 67.92 Mbit/s`) |
 | **Step 3: Urban Canyon (`pas = 0.2°`)** | `N = 4 / 8 / 16` Patch ULA | `2.825 / 4.700 / 7.406 Gbit` (peak `27.21 / 44.52 / 68.63 Mbit/s`) |
 
-![Shannon Channel Capacity vs. Elevation Angle under Rain Fade](docs/figures/step1_fig05.png)
-*Figure 1 (`step1_fig05.png`): Shannon channel capacity across elevation angles from clear-sky to 0.001% rain exceedance.*
+![Shannon Channel Capacity vs. Elevation Angle under Rain Fade](docs/figures/png/step1_fig05.png)
+*Figure 1 (`step1_fig05.png`): Shannon channel capacity across elevation angles from clear-sky to 0.001% rain exceedance — [Vector PDF](docs/figures/pdf/step1_fig05.pdf).*
 
-![Isotropic ULA Steered Polar Radiation Patterns](docs/figures/step2_fig01.png)
-*Figure 2 (`step2_fig01.png`): Half-wavelength isotropic ULA polar gain patterns (`N = 4, 8, 16, 200`) steered to `90°, 45°, 30°, 0°`.*
+![Isotropic ULA Steered Polar Radiation Patterns](docs/figures/png/step2_fig01.png)
+*Figure 2 (`step2_fig01.png`): Half-wavelength isotropic ULA polar gain patterns (`N = 4, 8, 16, 200`) steered to `90°, 45°, 30°, 0°` — [Vector PDF](docs/figures/pdf/step2_fig01.pdf).*
 
-![Pointing-Error Sensitivity Crossover](docs/figures/step2_fig05.png)
-*Figure 3 (`step2_fig05.png`): Per-pass throughput vs. pointing error — at `2°` mismatch, the narrow `200`-element beam drops below `16` elements.*
+![Pointing-Error Sensitivity Crossover](docs/figures/png/step2_fig05.png)
+*Figure 3 (`step2_fig05.png`): Per-pass throughput vs. pointing error — at `2°` mismatch, the narrow `200`-element beam drops below `16` elements — [Vector PDF](docs/figures/pdf/step2_fig05.pdf).*
 
-![Urban-Canyon NLOS and LOS Received Power and Capacity](docs/figures/step3_fig02.png)
-*Figure 4 (`step3_fig02.png`): Combined diffraction, specular wall reflection, and LOS received power/capacity for `4, 8, 16` isotropic elements.*
+![Urban-Canyon NLOS and LOS Received Power and Capacity](docs/figures/png/step3_fig02.png)
+*Figure 4 (`step3_fig02.png`): Combined diffraction, specular wall reflection, and LOS received power/capacity for `4, 8, 16` isotropic elements — [Vector PDF](docs/figures/pdf/step3_fig02.pdf).*
 
 ## Repository Layout & Quickstart
 
@@ -48,8 +48,9 @@ mmwave-leo-satcom-beamforming/
 │   ├── step1_link_budget_rain.m                 # FSPL, rain fade, variable vs. CBR pass optimization
 │   ├── step2_ula_beamforming.m                  # Isotropic/patch ULA patterns & 0..2 deg pointing-error sweep
 │   └── step3_ground_reflection_diffraction.m    # Urban canyon diffraction + Fresnel reflection + ULA capacity
-├── docs/
-│   └── figures/                                 # Exported white-background figures (step1..3_fig*.png)
+├── docs/figures/
+│   ├── png/                                     # 450 DPI PNG exports (all 14 figures)
+│   └── pdf/                                     # True vector PDF exports (all 14 figures)
 ├── .gitignore
 ├── LICENSE
 └── README.md

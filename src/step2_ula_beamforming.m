@@ -232,3 +232,19 @@ for idx = 1:numel(size_array)
         sprintf('%6.2f ', transmitted_data_patch(idx,:)/1e9));
 end
 toc;
+
+%% Export Figures (450 DPI PNG + Vector PDF)
+figRoot = fullfile(fileparts(fileparts(mfilename('fullpath'))), 'docs', 'figures');
+pngDir = fullfile(figRoot, 'png');
+pdfDir = fullfile(figRoot, 'pdf');
+if ~exist(pngDir, 'dir'), mkdir(pngDir); end
+if ~exist(pdfDir, 'dir'), mkdir(pdfDir); end
+figs = findall(0, 'Type', 'figure');
+if ~isempty(figs)
+    [~, ord] = sort([figs.Number]);
+    figs = figs(ord);
+    for fi = 1:numel(figs)
+        exportgraphics(figs(fi), fullfile(pngDir, sprintf('step2_fig%02d.png', fi)), 'Resolution', 450, 'BackgroundColor', 'white');
+        exportgraphics(figs(fi), fullfile(pdfDir, sprintf('step2_fig%02d.pdf', fi)), 'ContentType', 'vector', 'BackgroundColor', 'white');
+    end
+end
